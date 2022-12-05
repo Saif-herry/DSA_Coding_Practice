@@ -8,8 +8,8 @@ for(let i=1;i<n;i++){
     n1 = n2;
     n2 = sum;
 }
-return (n2)
+console.log(n2)
 }
 
-console.log(Fibonacy(5))
+Fibonacy(5)
 //FIB(5) = FIB(N-1)+FIB(N-2)
