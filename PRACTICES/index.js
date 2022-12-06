@@ -1,38 +1,20 @@
 /*
-Palindrom --> 123->321
+Fibonachi series--> 0,1,1,2,3,5,8
 */
 
-function IsPalindrom(num){
-      let flag = false;
-    num = new String(num)
-    let left = 0;
-    let right = num.length-1;
-    while(left<right){
-        if(num[left] == num[right]){
-            left++;
-            right--;
-            flag = true;
-        }
-        else{
-            flag = false
-            break
-        }
+function Fibonachi(num){
+
+    let n1 = 0;
+    let n2 = 1;
+    let sum = 0;
+    for(let i=1;i<num-1;i++){
+       sum = n1+n2;
+       n1 = n2;
+       n2 = sum;
+
     }
-    if(flag==true){
-        return num;
-    }
+
+    return n2
 }
 
-
-
-function CheckPalindrom(min,max){
-var bag = []
-    for(let i = min;i<max;i++){
-        if(IsPalindrom(i)){
-            bag.push(i)
-        }
-    }
-    console.log(bag)
-}
-CheckPalindrom(100,1000)
-
+console.log(Fibonachi(5))
