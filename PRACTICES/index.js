@@ -5,33 +5,32 @@ k = 9
 
 */
 
-function TwoSum(num){
-   let left = 0;
-   let right = num.length-1;
-   let sum = 9;
-   let flag = false;
-   while(left<right){
-    // console.log(num[left]+num[right])
-    if(sum == num[left]+num[right]){
-          flag = true;
-          break;
-        //   console.log("1")
+
+function TwoSum(n,k,arr){
+    let left = 0;
+    let right = n-1;
+    sum = 0;
+    let flag = false;
+    while(left<right){
+        sum = arr[left] + arr[right]
+        if(sum == k){
+            flag = true;
+            break;
+        }
+        if(sum>k){
+            right--;
+        }
+        if(sum<k){
+            left++;
+        }
     }
-    if(sum<num[left]+num[right]){
-        right--;
-        // console.log("2")
+    if(flag==true){
+        console.log(left,right)
     }
-    if(sum>num[left]+num[right]){
-        left++;
-        // console.log("3",num[left])
+    else{
+        console.log("-1","-1")
     }
-   }
-   if(flag == true){
-    console.log(left,right)
-   }
-   else{
-    console.log("-1","-1")
-   }
+
 }
 
-TwoSum([2,7,11,15])
+TwoSum(4,9,[2,7,11,15])
