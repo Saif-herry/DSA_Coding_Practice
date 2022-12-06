@@ -1,20 +1,28 @@
-/*
-Fibonachi series--> 0,1,1,2,3,5,8
-*/
 
-function Fibonachi(num){
 
-    let n1 = 0;
-    let n2 = 1;
-    let sum = 0;
-    for(let i=1;i<num-1;i++){
-       sum = n1+n2;
-       n1 = n2;
-       n2 = sum;
-
+function TwoSum(num){
+   let left = 0;
+   let right = num.length-1;
+   let sum = 9;
+   let flag = false;
+   while(left<right){
+    if(sum == num[left]+num[right]){
+          flag = true;
+          break;
     }
-
-    return n2
+    else if(sum>num[left]+num[right]){
+        right--;
+    }
+    else if(sum<num[left]+num[right]){
+        left++;
+    }
+   }
+   if(flag == true){
+    console.log(left,right)
+   }
+   else{
+    console.log("-1","-1")
+   }
 }
 
-console.log(Fibonachi(5))
+TwoSum([2,7,11,15])
