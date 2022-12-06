@@ -1,20 +1,24 @@
 /*
-153  --> 1+125+27 --> 153
+Armstrong number  123 -->321
 */
 
 
-function ArmsStrong(num){
-     num = new String(num)
-     let n = num.length;
-      let output=0;
-     for(let i of num){
-     output += parseInt(i)**n
-     }
-    if(output == parseInt(num)){
-        console.log("true")
-    }
-    else{
-        console.log("false")
-    }
+function Armstrong(num){
+ num =new String(num) 
+ console.log(num)
+let n = num.length;
+let output = 0;
+
+for(let i of num){
+    output += parseInt(i)**n
 }
-ArmsStrong(153)
+if(output == parseInt(num)){
+    console.log("true")
+}
+else{
+    console.log("false")
+}
+}
+Armstrong(153)
+
+
