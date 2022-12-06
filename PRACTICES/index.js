@@ -1,42 +1,38 @@
 /*
-Armstrong number  123 -->321
+Palindrom --> 123->321
 */
 
-
-function IsPalindrome(num){
+function IsPalindrom(num){
+      let flag = false;
     num = new String(num)
-    
     let left = 0;
     let right = num.length-1;
     while(left<right){
-        if(num[left]==num[right]){
+        if(num[left] == num[right]){
             left++;
             right--;
             flag = true;
         }
         else{
-            flag = false;
-            break;
+            flag = false
+            break
         }
     }
- if(flag == true){
-   return num
- }
- 
-}
-
-function countPalindrom(min,max){
-    var bag = [];
-for(let i= min;i<max;i++){
-    if(IsPalindrome(i)){
-      bag.push(i) 
+    if(flag==true){
+        return num;
     }
 }
-console.log(bag)
+
+
+
+function CheckPalindrom(min,max){
+var bag = []
+    for(let i = min;i<max;i++){
+        if(IsPalindrom(i)){
+            bag.push(i)
+        }
+    }
+    console.log(bag)
 }
-
-countPalindrom(100,1000)
-
-
-
+CheckPalindrom(100,1000)
 
