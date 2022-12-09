@@ -9,19 +9,23 @@ Sample Input--> 4 5 1 3
 Sample Output--> 2
 */
 
-function MissingInteger(arr){
-      
-    let n = arr.length+1;
-    let output = 0;
-    sum_of_n_num = (n*(n+1))/2;
-    for(let i=0;i<arr.length;i++){
-        sum_of_n_num -=arr[i];
+function Fizzbuzz(num){
+    for(let i=1;i<=num;i++){
+        if(i%3==0){
+            console.log("Fizz");
+        }
+        else if(i%5==0){
+            console.log("Buzz");
+        }
+        else if(i%3==0 && i%5==0){
+            console.log("FIzzBuzz");
+        }
+        else{
+            console.log(i)
+        }
     }
-    console.log(sum_of_n_num)
 }
-
-MissingInteger([4,5,1,3])
-
+Fizzbuzz(15)
 
 
 
