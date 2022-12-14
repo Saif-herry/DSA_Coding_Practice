@@ -15,9 +15,14 @@ function TwoSum(n,k,arr){
         break
        }
        else if(sum>k){
-          
+          right--;
+       }
+       else if(sum<k){
+        left++
        }
   }
+
+  flag==true?console.log(left,right):console.log("-1","-1")
 }
 
 TwoSum(4,9,[2,7,11,15])
