@@ -6,17 +6,23 @@ arr = [2,7,4,9]
 
 function SecondLargest(arr){
     
-    let F_Largest = -1 , S_Largest = -1;
+    let F_large = -1, S_large = -1
     for(let i=0;i<arr.length;i++){
-        if(arr[i]>F_Largest){
-            S_Largest =F_Largest
-            F_Largest = arr[i]
+        if(arr[i]>F_large){
+            S_large = F_large
+            F_large = arr[i]
         }
-        if(arr[i] > S_Largest && arr[i] != F_Largest){
-               S_Largest = arr[i]
+        else{
+            if(arr[i]>S_large && F_large != arr[i]){
+                S_large = arr[i]
+            }
         }
-    } 
-     console.log(S_Largest)
+    }
+    console.log(S_large)
 }
 
 SecondLargest([2,7,4,9])
+
+
+
+

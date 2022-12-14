@@ -1,26 +1,19 @@
-
-
 /*
-arr = [0,1,0,3,12]
+arr = [[1,3],[3,4],[4,6],[6,7]]
 */
 
-function MoveZeroes(arr){
-     
-    if(arr.length==1) return arr;
-    let j=0;
-    for(let i=0;i<arr.length;i++){
-        if(arr[i]!=0){
-            arr[j]=arr[i];
-            j++;
-        }
-    }
 
-    for(let i=j;i<arr.length;i++){
-        arr[i] = 0
-    }
-    return arr;
+function Duplicate(arr){
+     
+   let obj = {}
+   for(let i=0;i<arr.length;i++){
+        let temp = arr[i];
+
+        for(let j=0;j<temp.length;j++){
+            obj[temp[j]]=1
+        }
+   }
+   console.log(Object.keys(obj))
 }
 
-console.log(MoveZeroes([0,1,0,3,12]))
-
-
+Duplicate([[1,3],[3,4],[4,6],[6,7]])
