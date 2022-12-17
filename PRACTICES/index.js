@@ -1,28 +1,29 @@
-/*
-n=4
-k=9
-arr = [2,7,11,15]
-*/
 
-function TwoSum(n,k,arr){
-  let left = 0;
-  let right = n-1;
-  let flag = false;
-  while(left<right){
-    let sum = arr[left]+arr[right]
-       if(sum==k){
-        flag = right
-        break
-       }
-       else if(sum>k){
-          right--;
-       }
-       else if(sum<k){
-        left++
+function Anagram(x,y,m,n){
+      
+  x= x.split("").sort()
+  y = y.split("").sort()
+  if(m===n){
+      for(let i=0;i<m;i++){
+          if( x[i] == y[i]){
+           flag = true;
+          }
+          else{
+           flag = false;
+           break;
+          }
        }
   }
-
-  flag==true?console.log(left,right):console.log("-1","-1")
+  else{
+      flag = false     
+  }
+  flag===true?console.log("Anagram"):console.log("Not an Anagram");
+  
 }
+let x="abcd";
+let y ="dabc";
+let m = x.length;
+let n = y.length;
 
-TwoSum(4,9,[2,7,11,15])
+Anagram(x,y,m,n)
+
