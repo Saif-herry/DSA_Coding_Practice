@@ -1,24 +1,31 @@
 
 /*
 arr = [2,7,4,9]
+x = "abcd" 
+y= "dacb"
+m = x.length
+n = y.length
 */
 
-const Second_largest=(arr)=>{
 
-    let F_LArgest = -1, S_Largest = -1
-    for(let i=0;i<arr.length;i++){
-      if(arr[i]>F_LArgest){
-        S_Largest = F_LArgest;
-        F_LArgest = arr[i];
-      }
-      else{
-        if(arr[i]>S_Largest && F_LArgest!== arr[i]){
-          S_Largest = arr[i]
-        }
-      }
+function Anagram(x,y,m,n){
+   
+   x=x.split("").sort()
+   y=y.split("").sort()
+   let flag = false
+   for(let i=0;i<n;i++){
+    if(x[i]==y[i]){
+      flag = true
     }
-    console.log(S_Largest)
-
+    else{
+      flag = false
+      break;
+    }
+   }
+   flag==true?console.log("True"):console.log("False")
 }
-
-Second_largest([2,7,4,9])
+let x = "abcd"
+let y = "dacb"
+let m = x.length
+let n = y.length
+Anagram(x,y,m,n)
