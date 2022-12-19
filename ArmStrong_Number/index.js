@@ -1,6 +1,12 @@
 /*
 Given a number x, determine whether the given number is
  Armstrong number or not. 
+ Sample Input
+ num = 153
+
+ Sample Output
+ num = 153  --> (1**1 + 5**3 + 3**3)
+
 */
 
 

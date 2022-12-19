@@ -1,31 +1,30 @@
 
 /*
-arr = [2,7,4,9]
-x = "abcd" 
-y= "dacb"
-m = x.length
-n = y.length
+ArmStrong Number
+Sample Input 
+num = 153
+
+Sample Output
+true -->(1**3 + 5**3 + 3**3)
 */
 
 
-function Anagram(x,y,m,n){
-   
-   x=x.split("").sort()
-   y=y.split("").sort()
-   let flag = false
-   for(let i=0;i<n;i++){
-    if(x[i]==y[i]){
-      flag = true
-    }
-    else{
-      flag = false
-      break;
-    }
-   }
-   flag==true?console.log("True"):console.log("False")
+function ArmStrong(num){
+num = num.toString()
+//console.log(typeof(num))
+let output = 0;
+for(let i of num){
+  //console.log(i)
+output += parseInt(i)**num.length
+
 }
-let x = "abcd"
-let y = "dacb"
-let m = x.length
-let n = y.length
-Anagram(x,y,m,n)
+if(output === parseInt(num)){
+  console.log(true)
+}
+else{
+  console.log(false)
+}
+}
+
+
+ArmStrong(133)
