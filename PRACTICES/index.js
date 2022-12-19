@@ -1,29 +1,25 @@
 
-function Anagram(x,y,m,n){
-      
-  x= x.split("").sort()
-  y = y.split("").sort()
-  if(m===n){
-      for(let i=0;i<m;i++){
-          if( x[i] == y[i]){
-           flag = true;
-          }
-          else{
-           flag = false;
-           break;
-          }
-       }
-  }
-  else{
-      flag = false     
-  }
-  flag===true?console.log("Anagram"):console.log("Not an Anagram");
-  
+/*
+arr = [2,7,4,9]
+*/
+
+const Second_largest=(arr)=>{
+
+    let F_Largest = -1, S_Largest = -1;
+    for(let i=0;i<arr.length;i++){
+      if(arr[i]>F_Largest){
+       
+        S_Largest = F_Largest;
+        F_Largest = arr[i];
+      }
+      else{
+        if(arr[i]>S_Largest && F_Largest!== arr[i]){
+          S_Largest = arr[i]
+        }
+      }
+    }
+    console.log(S_Largest)
+
 }
-let x="abcd";
-let y ="dabc";
-let m = x.length;
-let n = y.length;
 
-Anagram(x,y,m,n)
-
+Second_largest([2,7,4,9])
