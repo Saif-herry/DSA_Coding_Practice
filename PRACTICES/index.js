@@ -1,30 +1,24 @@
 
 /*
-ArmStrong Number
-Sample Input 
-num = 153
+Sample Input
+[[1,3],[3,4],[4,6],[6,7]]
 
 Sample Output
-true -->(1**3 + 5**3 + 3**3)
+[1,3,4,6,7]
 */
 
 
-function ArmStrong(num){
-num = num.toString()
-//console.log(typeof(num))
-let output = 0;
-for(let i of num){
-  //console.log(i)
-output += parseInt(i)**num.length
+function duplicate_from_2D_Array(arr){
+  let obj={};
+for(let i=0;i<arr.length;i++){
+  let temp = arr[i]
+  for(let j=0;j<temp.length;j++){
+    obj[temp[j]] = 1
+  }
 
 }
-if(output === parseInt(num)){
-  console.log(true)
-}
-else{
-  console.log(false)
-}
+console.log(Object.keys(obj))
 }
 
 
-ArmStrong(133)
+duplicate_from_2D_Array([[1,3],[3,4],[4,6],[6,7]])
